@@ -166,12 +166,12 @@ const data = {
     },
     {
       name: "Greenhouses",
-      url: "greenhouse",
+      url: "/greenhouse",
       icon: IconPlant,
     },
     {
       name: "Gardens",
-      url: "garden",
+      url: "/garden",
       icon: IconFence,
     },
   ],
