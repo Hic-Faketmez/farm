@@ -7,7 +7,6 @@ import Link from "next/link";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import { Separator } from "./ui/separator";
 import { LinkIcon, MapPinIcon } from "lucide-react";
-import { AppSidebar } from "./AppSidebar";
 
 async function Sidebar() {
   const authUser = await currentUser();
@@ -72,7 +71,6 @@ async function Sidebar() {
           </div>
         </CardContent>
       </Card>
-      <AppSidebar/>
     </div>
   );
 }
