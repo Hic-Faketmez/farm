@@ -29,11 +29,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+ <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -42,17 +40,21 @@ export default function RootLayout({
           >
             <div className="min-h-screen">
               <Navbar />
-              <div className="max-w-7xl mx-auto px-4">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-                  <div className="lg:col-span-9">{children}</div>
-                  <SidebarProvider>
+              <main className="py-4">
+                {/* container to center the content */}
+                <div className="max-w-7xl mx-auto px-4">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-2">
                     <div className="hidden lg:block lg:col-span-3">
+                      <SidebarProvider>
                       <AppSidebar />
+                      </SidebarProvider>
                     </div>
-                  </SidebarProvider>
+                    <div className="lg:col-span-9">{children}</div>
+                  </div>
                 </div>
-              </div>
+              </main>
             </div>
+            {/* <Toaster /> */}
           </ThemeProvider>
         </body>
       </html>

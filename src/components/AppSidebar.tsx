@@ -21,6 +21,7 @@ import {
   IconFeatherFilled,
   IconMilk,
   IconHome2,
+  IconBuildingCottage,
 } from "@tabler/icons-react"
 import { IconCirclePlusFilled, IconMail, type Icon } from "@tabler/icons-react"
 
@@ -28,7 +29,7 @@ import { Button } from "@/components/ui/button"
 // import { NavDocuments } from "@/components/nav-documents"
 // import { NavMain } from "@/components/nav-main"
 // import { NavSecondary } from "@/components/nav-secondary"
-// import { NavUser } from "@/components/nav-user"
+import { NavUser } from "@/components/nav-user"
 import {
   Sidebar,
   SidebarContent,
@@ -40,13 +41,16 @@ import {
   SidebarGroup,
   SidebarGroupContent,
 } from "@/components/ui/sidebar"
+import { useUser } from "@clerk/nextjs";
+import { getUserByClerkId } from "@/actions/user.action";
+
 
 const data = {
-  user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
+  // user: {
+  //   name: user.username,
+  //   email: user.email,
+  //   avatar: user.image,
+  // },
   navMain: [
     {
       title: "Dashboard",
@@ -179,15 +183,15 @@ function NavMain({
               className="bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground active:bg-primary/90 active:text-primary-foreground min-w-8 duration-200 ease-linear"
             >
               <IconCirclePlusFilled />
-              <span>Quick Create</span>
+              <span>Add Animal</span>
             </SidebarMenuButton>
             <Button
               size="icon"
               className="size-8 group-data-[collapsible=icon]:opacity-0"
               variant="outline"
             >
-              <IconMail />
-              <span className="sr-only">Inbox</span>
+              <IconBuildingCottage />
+              <span className="sr-only">Barn</span>
             </Button>
           </SidebarMenuItem>
         </SidebarMenu>
@@ -236,9 +240,13 @@ function NavSecondary({
   )
 }
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  // const authUser = await currentUser();
+  // const user = await getUserByClerkId(authUser.id);
+  // const { user } = useUser();
+
   return (
-    <Sidebar collapsible="offcanvas" {...props}>
+    <Sidebar className="sticky top-20" {...props}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
@@ -260,8 +268,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
-        {/* <NavUser user={data.user} /> */}
+        <NavUser/>
       </SidebarFooter>
     </Sidebar>
   )
 }
+export default AppSidebar;
