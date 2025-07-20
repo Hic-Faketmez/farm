@@ -22,8 +22,13 @@ import {
   IconMilk,
   IconHome2,
   IconBuildingCottage,
+  IconArchive,
+  IconPlant,
+  IconFence,
+  IconWheat,
+  IconCirclePlusFilled,
+  type Icon,
 } from "@tabler/icons-react"
-import { IconCirclePlusFilled, IconMail, type Icon } from "@tabler/icons-react"
 
 import { Button } from "@/components/ui/button"
 // import { NavDocuments } from "@/components/nav-documents"
@@ -40,9 +45,11 @@ import {
   SidebarMenuItem,
   SidebarGroup,
   SidebarGroupContent,
+  SidebarGroupLabel,
 } from "@/components/ui/sidebar"
-import { useUser } from "@clerk/nextjs";
-import { getUserByClerkId } from "@/actions/user.action";
+import dashboard from "@/app/dashboard/page"
+// import { useUser } from "@clerk/nextjs";
+// import { getUserByClerkId } from "@/actions/user.action";
 
 
 const data = {
@@ -51,31 +58,36 @@ const data = {
   //   email: user.email,
   //   avatar: user.image,
   // },
-  navMain: [
-    {
+  dashboard: {
       title: "Dashboard",
-      url: "#",
+      url: "/dashboard",
       icon: IconDashboard,
     },
+  navMain: [
     {
       title: "Horse",
-      url: "#",
+      url: "/horse",
       icon: IconHorse,
     },
     {
       title: "Cow",
-      url: "#",
+      url: "/cow",
       icon: IconMilk,
     },
     {
       title: "Sheep",
-      url: "#",
+      url: "/sheep",
       icon: IconHome2,
     },
     {
       title: "Poultry",
-      url: "#",
+      url: "/poultry",
       icon: IconFeatherFilled,
+    },
+    {
+      title: "Apiary",
+      url: "/apiary",
+      icon: IconArchive,
     },
   ],
 
@@ -145,23 +157,24 @@ const data = {
       icon: IconSearch,
     },
   ],
-  // documents: [
-  //   {
-  //     name: "Data Library",
-  //     url: "#",
-  //     icon: IconDatabase,
-  //   },
-  //   {
-  //     name: "Reports",
-  //     url: "#",
-  //     icon: IconReport,
-  //   },
-  //   {
-  //     name: "Word Assistant",
-  //     url: "#",
-  //     icon: IconFileWord,
-  //   },
-  // ],
+
+  agriculture: [
+    {
+      name: "Fields",
+      url: "/field",
+      icon: IconWheat,
+    },
+    {
+      name: "Greenhouses",
+      url: "greenhouse",
+      icon: IconPlant,
+    },
+    {
+      name: "Gardens",
+      url: "garden",
+      icon: IconFence,
+    },
+  ],
 }
 
 function NavMain({
@@ -183,7 +196,7 @@ function NavMain({
               className="bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground active:bg-primary/90 active:text-primary-foreground min-w-8 duration-200 ease-linear"
             >
               <IconCirclePlusFilled />
-              <span>Add Animal</span>
+              <span>Quick Add </span>
             </SidebarMenuButton>
             <Button
               size="icon"
@@ -196,16 +209,50 @@ function NavMain({
           </SidebarMenuItem>
         </SidebarMenu>
         <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                {data.dashboard && <data.dashboard.icon />}
+                <a href={data.dashboard.url}>{data.dashboard.title}</a>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          <SidebarGroupLabel>Animals</SidebarGroupLabel>
           {items.map((item) => (
             <SidebarMenuItem key={item.title}>
               <SidebarMenuButton tooltip={item.title}>
                 {item.icon && <item.icon />}
-                <span>{item.title}</span>
+                <a href={item.url}>{item.title}</a>
               </SidebarMenuButton>
             </SidebarMenuItem>
           ))}
         </SidebarMenu>
       </SidebarGroupContent>
+    </SidebarGroup>
+  )
+}
+export function NavAgriculture({
+  items,
+}: {
+  items: {
+    name: string
+    url: string
+    icon: Icon
+  }[]
+}) {
+  return (
+    <SidebarGroup className="group-data-[collapsible=icon]:hidden">
+      <SidebarGroupLabel>Agriculture</SidebarGroupLabel>
+      <SidebarMenu>
+        {items.map((item) => (
+          <SidebarMenuItem key={item.name}>
+            <SidebarMenuButton asChild>
+              <a href={item.url}>
+                <item.icon />
+                <span>{item.name}</span>
+              </a>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        ))}
+      </SidebarMenu>
     </SidebarGroup>
   )
 }
@@ -254,7 +301,7 @@ function NavSecondary({
               asChild
               className="data-[slot=sidebar-menu-button]:!p-1.5"
             >
-              <a href="#">
+              <a href="/">
                 <IconInnerShadowTop className="!size-5" />
                 <span className="text-base font-semibold">Farm Inc.</span>
               </a>
@@ -264,7 +311,7 @@ function NavSecondary({
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        {/* <NavDocuments items={data.documents} /> */}
+        <NavAgriculture items={data.agriculture} />
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
