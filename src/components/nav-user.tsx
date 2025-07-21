@@ -35,7 +35,11 @@ import { SignOutButton, SignInButton } from '@clerk/nextjs'
 import { useUser } from "@clerk/nextjs";
 export function NavUser() {
   const { isMobile } = useSidebar();
-  const { user } = useUser();
+  const { isLoaded, user } = useUser();
+
+  if (!isLoaded) {
+    return <div>Loading...</div>;
+  }
 
   if (!user) {
     return (

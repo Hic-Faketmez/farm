@@ -72,7 +72,12 @@ async function Sidebar() {
           </div>
         </CardContent>
       </Card>
-      <AppSidebar/>
+      {/* <Separator  /> */}
+      {/* <Card>
+      <CardContent> */}
+      <AppSidebar />
+      {/* </CardContent>
+      </Card> */}
     </div>
   );
 }

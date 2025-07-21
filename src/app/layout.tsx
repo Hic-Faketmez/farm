@@ -46,7 +46,7 @@ export default function RootLayout({
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-2">
                     <div className="hidden lg:block lg:col-span-3">
                       <SidebarProvider>
-                      <AppSidebar />
+                      <Sidebar />
                       </SidebarProvider>
                     </div>
                     <div className="lg:col-span-9">{children}</div>

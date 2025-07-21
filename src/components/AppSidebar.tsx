@@ -293,7 +293,7 @@ function NavSecondary({
   // const { user } = useUser();
 
   return (
-    <Sidebar className="sticky top-20" {...props}>
+    <Sidebar className="sticky top-20 mt-4" {...props}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
