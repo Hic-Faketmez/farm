@@ -65,18 +65,18 @@ const data = {
     },
   navMain: [
     {
-      title: "Haras",
+      title: "Hara",
       url: "/haras",
       icon: IconHorse,
     },
     {
-      title: "Cow",
-      url: "/cow",
+      title: "Barn",
+      url: "/barn",
       icon: IconMilk,
     },
     {
-      title: "Sheep",
-      url: "/sheep",
+      title: "Sheepfold",
+      url: "/sheepfold",
       icon: IconHome2,
     },
     {
@@ -160,17 +160,17 @@ const data = {
 
   agriculture: [
     {
-      name: "Fields",
+      name: "Field",
       url: "/field",
       icon: IconWheat,
     },
     {
-      name: "Greenhouses",
+      name: "Greenhouse",
       url: "/greenhouse",
       icon: IconPlant,
     },
     {
-      name: "Gardens",
+      name: "Garden",
       url: "/garden",
       icon: IconFence,
     },

@@ -1,15 +1,15 @@
 import React from 'react'
 import Cards from "@/components/FarmsteadCards";
-import {haras} from "./data"
+import {Farmstead} from "@/data/data"
 
 
-function horse() {
+function hara() {
   return (
     <>   
     <div> Haras </div>
-    <Cards data = {haras}/>
+    <Cards data={Farmstead} type="haras"/>
     </>
   )
 }
 
-export default horse
+export default hara

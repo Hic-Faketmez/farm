@@ -1,6 +1,14 @@
+interface Farmstead {
+    id: string,
+    type: string,
+    name: string,
+    description: string,
+    location?: string,
+}
+
 interface Horse {
     id: string,
-    harasid: string
+    farmsteadid: string
     name: string,
     breed: string,
     gender: string,
@@ -13,12 +21,22 @@ interface Horse {
     description: string,
 }
 
-interface Farmstead {
+interface cows {
     id: string,
-    type: string,
+    farmsteadid: string,
     name: string,
+    breed: string,
+    healthStatus: string,
     description: string,
-    location?: string,
+}
+
+interface sheep {
+    id: string,
+    farmsteadid: string,
+    name: string,
+    breed: string,
+    healthStatus: string,
+    description: string,
 }
 
 export const Farmstead : Farmstead[] = [
@@ -41,13 +59,21 @@ export const Farmstead : Farmstead[] = [
     type: "barn",
     name: "Cattle-1",
     description: "Sığır Ahırı",
-    location: "ankara",
+    location: "Yalova",
+  },
+  {
+    id: "4",
+    type: "sheepfold",
+    name: "Sheepfold-1",
+    description: "KOyun Ağılı",
+    location: "Gemlik",
   },
 ]
+
 export const horses: Horse[] = [
   {
     id: "1",
-    harasid: "1",
+    farmsteadid: "1",
     name: "Alaz",
     breed: "Arap",
     gender: "Erkek",
@@ -61,7 +87,7 @@ export const horses: Horse[] = [
   },
   {
     id: "2",
-    harasid: "1",
+    farmsteadid: "1",
     name: "Yıldız",
     breed: "İngiliz",
     gender: "Dişi",
@@ -75,7 +101,7 @@ export const horses: Horse[] = [
   },
   {
     id: "3",
-    harasid: "1",
+    farmsteadid: "1",
     name: "Pars",
     breed: "Haflinger",
     gender: "Erkek",
@@ -89,7 +115,7 @@ export const horses: Horse[] = [
   },
   {
     id: "4",
-    harasid: "1",
+    farmsteadid: "1",
     name: "Zümrüt",
     breed: "Arap",
     gender: "Dişi",
@@ -103,7 +129,7 @@ export const horses: Horse[] = [
   },
   {
     id: "5",
-    harasid: "1",
+    farmsteadid: "1",
     name: "Fırtına",
     breed: "Quarter",
     gender: "Erkek",
@@ -117,7 +143,7 @@ export const horses: Horse[] = [
   },
    {
     id: "6",
-    harasid: "1",
+    farmsteadid: "1",
     name: "Alaz",
     breed: "Arap",
     gender: "Erkek",
@@ -131,7 +157,7 @@ export const horses: Horse[] = [
   },
   {
     id: "7",
-    harasid: "1",
+    farmsteadid: "1",
     name: "Yıldız",
     breed: "İngiliz",
     gender: "Dişi",
@@ -145,7 +171,7 @@ export const horses: Horse[] = [
   },
   {
     id: "8",
-    harasid: "1",
+    farmsteadid: "1",
     name: "Pars",
     breed: "Haflinger",
     gender: "Erkek",
@@ -159,7 +185,7 @@ export const horses: Horse[] = [
   },
   {
     id: "9",
-    harasid: "2",
+    farmsteadid: "2",
     name: "Zümrüt",
     breed: "Arap",
     gender: "Dişi",
@@ -173,7 +199,7 @@ export const horses: Horse[] = [
   },
   {
     id: "10",
-    harasid: "2",
+    farmsteadid: "2",
     name: "Fırtına",
     breed: "Quarter",
     gender: "Erkek",
@@ -187,7 +213,7 @@ export const horses: Horse[] = [
   },
    {
     id: "11",
-    harasid: "2",
+    farmsteadid: "2",
     name: "Alaz",
     breed: "Arap",
     gender: "Erkek",
@@ -201,7 +227,7 @@ export const horses: Horse[] = [
   },
   {
     id: "12",
-    harasid: "2",
+    farmsteadid: "2",
     name: "Yıldız",
     breed: "İngiliz",
     gender: "Dişi",
@@ -215,7 +241,7 @@ export const horses: Horse[] = [
   },
   {
     id: "13",
-    harasid: "2",
+    farmsteadid: "2",
     name: "Pars",
     breed: "Haflinger",
     gender: "Erkek",
@@ -229,7 +255,7 @@ export const horses: Horse[] = [
   },
   {
     id: "14",
-    harasid: "2",
+    farmsteadid: "2",
     name: "Zümrüt",
     breed: "Arap",
     gender: "Dişi",
@@ -243,7 +269,7 @@ export const horses: Horse[] = [
   },
   {
     id: "15",
-    harasid: "2",
+    farmsteadid: "2",
     name: "Fırtına",
     breed: "Quarter",
     gender: "Erkek",
@@ -257,7 +283,7 @@ export const horses: Horse[] = [
   },
     {
     id: "16",
-    harasid: "2",
+    farmsteadid: "2",
     name: "Yağmur",
     breed: "Quarter",
     gender: "Dişi",
@@ -270,3 +296,64 @@ export const horses: Horse[] = [
     description: "Uysal yapısı ile yeni başlayanlar için ideal.",
   },
 ];
+
+export const cows : cows[] = [
+  {
+    id: "1",
+    farmsteadid: "3",
+    name: "Sarı kız",
+    breed: "Angus",
+    healthStatus: "Sağlıklı",
+    description: "Sağlıklı bir hayvan.",
+  },
+  {
+    id: "2",
+    farmsteadid: "3",
+    name: "boynuzlu",
+    breed: "Angus",
+    healthStatus: "Sağlıklı",
+    description: "Besili bir inek.",
+  },
+  {
+    id: "3",
+    farmsteadid: "3",
+    name: "Portakal",
+    breed: "Holland",
+    healthStatus: "Sağlıklı",
+    description: "Süt verimi yüksek.",
+  },
+]
+export const sheep : sheep[] = [
+  {
+    id: "1",
+    farmsteadid: "4",
+    name: "12345",
+    breed: "Kıvırcık",
+    healthStatus: "Sağlıklı",
+    description: "Sağlıklı bir hayvan.",
+  },
+  {
+    id: "2",
+    farmsteadid: "4",
+    name: "345263",
+    breed: "KIl Kuyruk",
+    healthStatus: "Sağlıklı",
+    description: "Besili bir koyun.",
+  },
+  {
+    id: "3",
+    farmsteadid: "4",
+    name: "234565",
+    breed: "Ankara",
+    healthStatus: "Sağlıklı",
+    description: "Süt verimi yüksek.",
+  },
+  {
+    id: "4",
+    farmsteadid: "4",
+    name: "987654",
+    breed: "Samsun",
+    healthStatus: "Sağlıklı",
+    description: "Besili ve sağlıklı bir koyun.",
+  },
+]
