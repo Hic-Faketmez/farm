@@ -42,14 +42,14 @@ export default function RootLayout({
               <Navbar />
               <main className="py-4">
                 {/* container to center the content */}
-                <div className="max-w-7xl mx-auto px-4">
+                <div className="mx-max px-4">
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-2">
-                    <div className="hidden lg:block lg:col-span-3">
+                    <div className="hidden lg:block lg:col-span-3 mr-2">
                       <SidebarProvider>
                       <Sidebar />
                       </SidebarProvider>
                     </div>
-                    <div className="lg:col-span-9">{children}</div>
+                    <div className="lg:col-span-9 ml-2">{children}</div>
                   </div>
                 </div>
               </main>

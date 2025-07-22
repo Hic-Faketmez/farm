@@ -65,8 +65,8 @@ const data = {
     },
   navMain: [
     {
-      title: "Horse",
-      url: "/horse",
+      title: "Haras",
+      url: "/haras",
       icon: IconHorse,
     },
     {
