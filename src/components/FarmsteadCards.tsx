@@ -52,6 +52,12 @@ function FarmsteadCard<T extends BaseData>({ data }: FarmsteadCardProps<T>) {
       case 'sheepfold':
         router.push(`/sheep?farmsteadId=${data.id}`);
         break;
+      case 'apiary':
+        router.push(`/hives?farmsteadId=${data.id}`);
+        break;
+      case 'poultry':
+        router.push(`/coop?farmsteadId=${data.id}`);
+        break;
       default:
         break;
     }

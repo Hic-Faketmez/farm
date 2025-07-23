@@ -1,9 +1,15 @@
 import React from 'react'
+import Cards from "@/components/FarmsteadCards";
+import {Farmstead} from "@/data/data"
 
-function poultry() {
+
+function Poultry() {
   return (
-    <div> Where ara the chickens</div>
+    <>   
+    <div> Poultries </div>
+    <Cards data={Farmstead} type="poultry"/>
+    </>
   )
 }
 
-export default poultry
+export default Poultry

@@ -39,6 +39,24 @@ interface sheep {
     description: string,
 }
 
+interface coop {
+    id: string,
+    farmsteadid: string,
+    name: string,
+    breed: string,
+    healthStatus: string,
+    description: string,
+}
+
+interface hive {
+    id: string,
+    farmsteadid: string,
+    name: string,
+    breed: string,
+    healthStatus: string,
+    description: string,
+}
+
 export const Farmstead : Farmstead[] = [
   {
     id: "1",
@@ -65,8 +83,29 @@ export const Farmstead : Farmstead[] = [
     id: "4",
     type: "sheepfold",
     name: "Sheepfold-1",
-    description: "KOyun Ağılı",
+    description: "Koyun Ağılı",
     location: "Gemlik",
+  },
+  {
+    id: "5",
+    type: "sheepfold",
+    name: "Sheepfold-2",
+    description: "Keçi Ağılı",
+    location: "Bandırma",
+  },
+  {
+    id: "6",
+    type: "poultry",
+    name: "Poutry-1",
+    description: "Tavuk Kümesi",
+    location: "Mudurnu",
+  },
+  {
+    id: "7",
+    type: "apiary",
+    name: "Apiary-1",
+    description: "Yalova Arılığı",
+    location: "Yalova",
   },
 ]
 
@@ -355,5 +394,73 @@ export const sheep : sheep[] = [
     breed: "Samsun",
     healthStatus: "Sağlıklı",
     description: "Besili ve sağlıklı bir koyun.",
+  },
+]
+export const coop : coop[] = [
+  {
+    id: "1",
+    farmsteadid: "6",
+    name: "12345",
+    breed: "Habeş",
+    healthStatus: "Sağlıklı",
+    description: "Verimli kümes",
+  },
+  {
+    id: "2",
+    farmsteadid: "6",
+    name: "345263",
+    breed: "Plymouth",
+    healthStatus: "Sağlıklı",
+    description: "Verimli kümes, yumurta",
+  },
+  {
+    id: "3",
+    farmsteadid: "6",
+    name: "234565",
+    breed: "Brahma",
+    healthStatus: "Sağlıklı",
+    description: "Verimli kümes, et",
+  },
+  {
+    id: "4",
+    farmsteadid: "6",
+    name: "987654",
+    breed: "Lohman Brown",
+    healthStatus: "Sağlıklı",
+    description: "Verimli kümes, gezen tavuk kümesi",
+  },
+]
+export const hive : hive[] = [
+  {
+    id: "1",
+    farmsteadid: "7",
+    name: "12345",
+    breed: "Anadolu ",
+    healthStatus: "Sağlıklı",
+    description: "Verimli kovan",
+  },
+  {
+    id: "2",
+    farmsteadid: "7",
+    name: "345263",
+    breed: "Suriye",
+    healthStatus: "Sağlıklı",
+    description: "Verimli kovan",
+  },
+  {
+    id: "3",
+    farmsteadid: "7",
+    name: "234565",
+    breed: "Doğu",
+    healthStatus: "Sağlıklı",
+    description: "Verimli kovan",
+  },
+  {
+    id: "4",
+    farmsteadid: "7",
+    name: "987654",
+    breed: "Carniloa",
+    healthStatus: "Sağlıklı",
+    description: "Verimli kovan",
   },
 ]

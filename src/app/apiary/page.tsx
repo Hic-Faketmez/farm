@@ -1,9 +1,15 @@
 import React from 'react'
+import Cards from "@/components/FarmsteadCards";
+import {Farmstead} from "@/data/data"
 
-function apiary() {
+
+function Apiary() {
   return (
-    <div> Bee</div>
+    <>   
+    <div> Apiaries </div>
+    <Cards data={Farmstead} type="apiary"/>
+    </>
   )
 }
 
-export default apiary
+export default Apiary
