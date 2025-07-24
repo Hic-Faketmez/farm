@@ -44,19 +44,27 @@ function FarmsteadCard<T extends BaseData>({ data }: FarmsteadCardProps<T>) {
   const handleClick = () => {
     switch (data.type) {
       case 'haras':
-        router.push(`/horses?farmsteadId=${data.id}`);
+        router.push(`haras/horses?farmsteadId=${data.id}`);
         break;
       case 'barn':
-        router.push(`/cows?farmsteadId=${data.id}`);
+        router.push(`barn/cows?farmsteadId=${data.id}`);
         break;
       case 'sheepfold':
-        router.push(`/sheep?farmsteadId=${data.id}`);
+        router.push(`sheepfold/sheep?farmsteadId=${data.id}`);
         break;
       case 'apiary':
-        router.push(`/hives?farmsteadId=${data.id}`);
+        router.push(`apiary/hives?farmsteadId=${data.id}`);
         break;
       case 'poultry':
-        router.push(`/coop?farmsteadId=${data.id}`);
+        router.push(`poultry/coop?farmsteadId=${data.id}`);
+      case 'fields':
+        router.push(`fields/field?farmsteadId=${data.id}`);
+        break;
+      case 'gardens':
+        router.push(`gardens/garden?farmsteadId=${data.id}`);
+        break;
+      case 'greenhouses':
+        router.push(`greenhouses/greenhouse?farmsteadId=${data.id}`);
         break;
       default:
         break;

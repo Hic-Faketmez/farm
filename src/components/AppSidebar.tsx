@@ -161,17 +161,17 @@ const data = {
   agriculture: [
     {
       name: "Field",
-      url: "/field",
+      url: "/fields",
       icon: IconWheat,
     },
     {
       name: "Greenhouse",
-      url: "/greenhouse",
+      url: "/greenhouses",
       icon: IconPlant,
     },
     {
       name: "Garden",
-      url: "/garden",
+      url: "/gardens",
       icon: IconFence,
     },
   ],

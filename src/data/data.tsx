@@ -57,6 +57,30 @@ interface hive {
     description: string,
 }
 
+interface field {
+    id: string,
+    farmsteadid: string,
+    name: string,
+    healthStatus: string,
+    description: string,
+}
+
+interface garden {
+    id: string,
+    farmsteadid: string,
+    name: string,
+    healthStatus: string,
+    description: string,
+}
+
+interface greenhouse {
+    id: string,
+    farmsteadid: string,
+    name: string,
+    healthStatus: string,
+    description: string,
+}
+
 export const Farmstead : Farmstead[] = [
   {
     id: "1",
@@ -106,6 +130,34 @@ export const Farmstead : Farmstead[] = [
     name: "Apiary-1",
     description: "Yalova Arılığı",
     location: "Yalova",
+  },
+  {
+    id: "8",
+    type: "fields",
+    name: "Erzincan Kooperatifi",
+    description: "Buğday tarlaları",
+    location: "Erzincan",
+  },
+  {
+    id: "9",
+    type: "fields",
+    name: "Ağrı Kooperatifi",
+    description: "Arpa tarlaları",
+    location: "Ağrı",
+  },
+  {
+    id: "10",
+    type: "gardens",
+    name: "Mağraönü",
+    description: "Üzüm ve incir bahçeleri",
+    location: "Malatya",
+  },
+  {
+    id: "11",
+    type: "greenhouses",
+    name: "Tarlabaşı",
+    description: "Domates ve marul seraları",
+    location: "Antalya",
   },
 ]
 
@@ -389,7 +441,7 @@ export const sheep : sheep[] = [
   },
   {
     id: "4",
-    farmsteadid: "4",
+    farmsteadid: "5",
     name: "987654",
     breed: "Samsun",
     healthStatus: "Sağlıklı",
@@ -463,4 +515,67 @@ export const hive : hive[] = [
     healthStatus: "Sağlıklı",
     description: "Verimli kovan",
   },
+]
+
+export const field : field[] = [
+  {
+    id: "1",
+    farmsteadid: "8",
+    name: "Kavakarkası-1",
+    healthStatus: "Sağlıklı",
+    description: "Buğday tarlası",
+  }, 
+  {
+    id: "3",
+    farmsteadid: "8",
+    name: "Kavakarkası-2",
+    healthStatus: "Sağlıklı",
+    description: "Buğday tarlası",
+  }, 
+  {
+    id: "2",
+    farmsteadid: "9",
+    name: "Darpa-1",
+    healthStatus: "Sağlıklı",
+    description: "Arpa tarlası",
+  }, 
+  {
+    id: "2",
+    farmsteadid: "9",
+    name: "Darpa-2",
+    healthStatus: "Sağlıklı",
+    description: "Arpa tarlası",
+  }, 
+]
+export const garden : garden[] = [
+  {
+    id: "1",
+    farmsteadid: "10",
+    name: "Mağraönü-1",
+    healthStatus: "Sağlıklı",
+    description: "Üzüm bahçesiı",
+  }, 
+  {
+    id: "2",
+    farmsteadid: "10",
+    name: "Mağraönü-2",
+    healthStatus: "Sağlıklı",
+    description: "İncir bahçesi",
+  }, 
+]
+export const greenhouse : greenhouse[] = [
+  {
+    id: "1",
+    farmsteadid: "11",
+    name: "Tarlabaşı-1",
+    healthStatus: "Sağlıklı",
+    description: "Domates serası",
+  }, 
+  {
+    id: "2",
+    farmsteadid: "11",
+    name: "Tarlabaşı-2",
+    healthStatus: "Sağlıklı",
+    description: "Marul Serası",
+  }, 
 ]
