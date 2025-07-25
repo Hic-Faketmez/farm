@@ -1,3 +1,15 @@
+interface User {
+  id: string,
+  email: string,
+  username: string,
+  clerkId: string,
+  bio?: string,
+  image?: string,
+  location?: string,
+  website?: string,
+  createdAt?: string,
+  updatedAt?: string,
+}
 interface Farmstead {
     id: string,
     type: string,
@@ -80,6 +92,21 @@ interface greenhouse {
     healthStatus: string,
     description: string,
 }
+
+export const user : User[] = [
+  {
+  id: "1",
+  email: "user@user.com",
+  username: "test",
+  clerkId: "1",
+  bio: "bio",
+  image: "image URL",
+  location: "Ankara",
+  website: "www.user.com",
+  createdAt: "date",
+  updatedAt: "date",
+  },
+]
 
 export const Farmstead : Farmstead[] = [
   {
